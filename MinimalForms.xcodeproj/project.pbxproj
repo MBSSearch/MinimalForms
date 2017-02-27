@@ -17,18 +17,18 @@
 		3F2C9F851E6429B600614CB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2C9F831E6429B600614CB5 /* LaunchScreen.storyboard */; };
 		3F2C9F8A1E64309E00614CB5 /* MinimalForms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2C9F401E63735000614CB5 /* MinimalForms.framework */; };
 		3F2C9F8B1E64309E00614CB5 /* MinimalForms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2C9F401E63735000614CB5 /* MinimalForms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3F2C9F8F1E6430CC00614CB5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6C1E6428F900614CB5 /* Button.swift */; };
-		3F2C9F901E6430CC00614CB5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5E1E6422F400614CB5 /* ButtonCell.swift */; };
-		3F2C9F911E6430CC00614CB5 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6D1E6428F900614CB5 /* Detail.swift */; };
-		3F2C9F921E6430CC00614CB5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5F1E6422F400614CB5 /* DetailCell.swift */; };
-		3F2C9F931E6430D900614CB5 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F661E6423E400614CB5 /* Row.swift */; };
-		3F2C9F941E6430D900614CB5 /* RowConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6A1E64251700614CB5 /* RowConvertible.swift */; };
-		3F2C9F951E6430D900614CB5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F681E6424A600614CB5 /* Section.swift */; };
-		3F2C9F961E6430D900614CB5 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6E1E6428F900614CB5 /* Switch.swift */; };
-		3F2C9F971E6430D900614CB5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F601E6422F400614CB5 /* SwitchCell.swift */; };
-		3F2C9F981E6430D900614CB5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6F1E6428F900614CB5 /* TextField.swift */; };
-		3F2C9F991E6430D900614CB5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */; };
-		3F2C9F9C1E6436FE00614CB5 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F9A1E6436DC00614CB5 /* FormController.swift */; };
+		3F2C9FB51E643BA600614CB5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F9D1E643B5C00614CB5 /* Button.swift */; };
+		3F2C9FB61E643BA600614CB5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F9E1E643B5C00614CB5 /* ButtonCell.swift */; };
+		3F2C9FB71E643BA600614CB5 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F9F1E643B5C00614CB5 /* Detail.swift */; };
+		3F2C9FB81E643BA600614CB5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA01E643B5C00614CB5 /* DetailCell.swift */; };
+		3F2C9FB91E643BA600614CB5 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA11E643B5C00614CB5 /* FormController.swift */; };
+		3F2C9FBA1E643BB000614CB5 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA21E643B5C00614CB5 /* Row.swift */; };
+		3F2C9FBB1E643BB000614CB5 /* RowConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA31E643B5C00614CB5 /* RowConvertible.swift */; };
+		3F2C9FBC1E643BB000614CB5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA41E643B5C00614CB5 /* Section.swift */; };
+		3F2C9FBD1E643BB000614CB5 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA51E643B5C00614CB5 /* Switch.swift */; };
+		3F2C9FBE1E643BB000614CB5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA61E643B5C00614CB5 /* SwitchCell.swift */; };
+		3F2C9FBF1E643BB000614CB5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA71E643B5C00614CB5 /* TextField.swift */; };
+		3F2C9FC01E643BB000614CB5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9FA81E643B5C00614CB5 /* TextFieldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,17 +69,6 @@
 		3F2C9F581E63742300614CB5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/MinimalForms/Info.plist; sourceTree = SOURCE_ROOT; };
 		3F2C9F5A1E63743100614CB5 /* MinimalForms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MinimalForms.h; path = Sources/MinimalFormsObjC/MinimalForms.h; sourceTree = SOURCE_ROOT; };
 		3F2C9F5C1E6421F400614CB5 /* MinimalFormsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MinimalFormsTests.swift; path = Tests/MinimalForms/MinimalFormsTests.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F5E1E6422F400614CB5 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonCell.swift; path = Sources/MinimalForms/Cells/ButtonCell.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F5F1E6422F400614CB5 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCell.swift; path = Sources/MinimalForms/Cells/DetailCell.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F601E6422F400614CB5 /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchCell.swift; path = Sources/MinimalForms/Cells/SwitchCell.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = Sources/MinimalForms/Cells/TextFieldCell.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F661E6423E400614CB5 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Sources/MinimalForms/Cells/Row.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F681E6424A600614CB5 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Sources/MinimalForms/Cells/Section.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F6A1E64251700614CB5 /* RowConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RowConvertible.swift; path = Sources/MinimalForms/Cells/RowConvertible.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F6C1E6428F900614CB5 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Sources/MinimalForms/Cells/Button.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F6D1E6428F900614CB5 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Detail.swift; path = Sources/MinimalForms/Cells/Detail.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F6E1E6428F900614CB5 /* Switch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Switch.swift; path = Sources/MinimalForms/Cells/Switch.swift; sourceTree = SOURCE_ROOT; };
-		3F2C9F6F1E6428F900614CB5 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Sources/MinimalForms/Cells/TextField.swift; sourceTree = SOURCE_ROOT; };
 		3F2C9F781E6429B600614CB5 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2C9F7A1E6429B600614CB5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F2C9F7C1E6429B600614CB5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +76,18 @@
 		3F2C9F811E6429B600614CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2C9F841E6429B600614CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2C9F861E6429B600614CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3F2C9F9A1E6436DC00614CB5 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormController.swift; path = Sources/MinimalForms/Cells/FormController.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9F9D1E643B5C00614CB5 /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Button.swift; path = Sources/MinimalForms/Button.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9F9E1E643B5C00614CB5 /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ButtonCell.swift; path = Sources/MinimalForms/ButtonCell.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9F9F1E643B5C00614CB5 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Detail.swift; path = Sources/MinimalForms/Detail.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA01E643B5C00614CB5 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailCell.swift; path = Sources/MinimalForms/DetailCell.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA11E643B5C00614CB5 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormController.swift; path = Sources/MinimalForms/FormController.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA21E643B5C00614CB5 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Sources/MinimalForms/Row.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA31E643B5C00614CB5 /* RowConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RowConvertible.swift; path = Sources/MinimalForms/RowConvertible.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA41E643B5C00614CB5 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Sources/MinimalForms/Section.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA51E643B5C00614CB5 /* Switch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Switch.swift; path = Sources/MinimalForms/Switch.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA61E643B5C00614CB5 /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchCell.swift; path = Sources/MinimalForms/SwitchCell.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA71E643B5C00614CB5 /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextField.swift; path = Sources/MinimalForms/TextField.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9FA81E643B5C00614CB5 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = Sources/MinimalForms/TextFieldCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,20 +142,20 @@
 		3F2C9F421E63735000614CB5 /* MinimalForms */ = {
 			isa = PBXGroup;
 			children = (
-				3F2C9F6C1E6428F900614CB5 /* Button.swift */,
-				3F2C9F5E1E6422F400614CB5 /* ButtonCell.swift */,
-				3F2C9F6D1E6428F900614CB5 /* Detail.swift */,
-				3F2C9F5F1E6422F400614CB5 /* DetailCell.swift */,
-				3F2C9F9A1E6436DC00614CB5 /* FormController.swift */,
+				3F2C9F9D1E643B5C00614CB5 /* Button.swift */,
+				3F2C9F9E1E643B5C00614CB5 /* ButtonCell.swift */,
+				3F2C9F9F1E643B5C00614CB5 /* Detail.swift */,
+				3F2C9FA01E643B5C00614CB5 /* DetailCell.swift */,
+				3F2C9FA11E643B5C00614CB5 /* FormController.swift */,
 				3F2C9F581E63742300614CB5 /* Info.plist */,
 				3F2C9F5A1E63743100614CB5 /* MinimalForms.h */,
-				3F2C9F661E6423E400614CB5 /* Row.swift */,
-				3F2C9F6A1E64251700614CB5 /* RowConvertible.swift */,
-				3F2C9F681E6424A600614CB5 /* Section.swift */,
-				3F2C9F6E1E6428F900614CB5 /* Switch.swift */,
-				3F2C9F601E6422F400614CB5 /* SwitchCell.swift */,
-				3F2C9F6F1E6428F900614CB5 /* TextField.swift */,
-				3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */,
+				3F2C9FA21E643B5C00614CB5 /* Row.swift */,
+				3F2C9FA31E643B5C00614CB5 /* RowConvertible.swift */,
+				3F2C9FA41E643B5C00614CB5 /* Section.swift */,
+				3F2C9FA51E643B5C00614CB5 /* Switch.swift */,
+				3F2C9FA61E643B5C00614CB5 /* SwitchCell.swift */,
+				3F2C9FA71E643B5C00614CB5 /* TextField.swift */,
+				3F2C9FA81E643B5C00614CB5 /* TextFieldCell.swift */,
 			);
 			path = MinimalForms;
 			sourceTree = "<group>";
@@ -327,18 +327,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F2C9F8F1E6430CC00614CB5 /* Button.swift in Sources */,
-				3F2C9F961E6430D900614CB5 /* Switch.swift in Sources */,
-				3F2C9F991E6430D900614CB5 /* TextFieldCell.swift in Sources */,
-				3F2C9F9C1E6436FE00614CB5 /* FormController.swift in Sources */,
-				3F2C9F971E6430D900614CB5 /* SwitchCell.swift in Sources */,
-				3F2C9F981E6430D900614CB5 /* TextField.swift in Sources */,
-				3F2C9F901E6430CC00614CB5 /* ButtonCell.swift in Sources */,
-				3F2C9F941E6430D900614CB5 /* RowConvertible.swift in Sources */,
-				3F2C9F951E6430D900614CB5 /* Section.swift in Sources */,
-				3F2C9F921E6430CC00614CB5 /* DetailCell.swift in Sources */,
-				3F2C9F931E6430D900614CB5 /* Row.swift in Sources */,
-				3F2C9F911E6430CC00614CB5 /* Detail.swift in Sources */,
+				3F2C9FB51E643BA600614CB5 /* Button.swift in Sources */,
+				3F2C9FBF1E643BB000614CB5 /* TextField.swift in Sources */,
+				3F2C9FB61E643BA600614CB5 /* ButtonCell.swift in Sources */,
+				3F2C9FB81E643BA600614CB5 /* DetailCell.swift in Sources */,
+				3F2C9FBD1E643BB000614CB5 /* Switch.swift in Sources */,
+				3F2C9FB71E643BA600614CB5 /* Detail.swift in Sources */,
+				3F2C9FBA1E643BB000614CB5 /* Row.swift in Sources */,
+				3F2C9FBC1E643BB000614CB5 /* Section.swift in Sources */,
+				3F2C9FBB1E643BB000614CB5 /* RowConvertible.swift in Sources */,
+				3F2C9FB91E643BA600614CB5 /* FormController.swift in Sources */,
+				3F2C9FBE1E643BB000614CB5 /* SwitchCell.swift in Sources */,
+				3F2C9FC01E643BB000614CB5 /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
