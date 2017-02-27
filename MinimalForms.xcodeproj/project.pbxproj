@@ -10,22 +10,24 @@
 		3F2C9F4A1E63735000614CB5 /* MinimalForms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2C9F401E63735000614CB5 /* MinimalForms.framework */; };
 		3F2C9F5B1E63743100614CB5 /* MinimalForms.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F2C9F5A1E63743100614CB5 /* MinimalForms.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F2C9F5D1E6421F400614CB5 /* MinimalFormsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5C1E6421F400614CB5 /* MinimalFormsTests.swift */; };
-		3F2C9F621E6422F400614CB5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5E1E6422F400614CB5 /* ButtonCell.swift */; };
-		3F2C9F631E6422F400614CB5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5F1E6422F400614CB5 /* DetailCell.swift */; };
-		3F2C9F641E6422F400614CB5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F601E6422F400614CB5 /* SwitchCell.swift */; };
-		3F2C9F651E6422F400614CB5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */; };
-		3F2C9F671E6423E400614CB5 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F661E6423E400614CB5 /* Row.swift */; };
-		3F2C9F691E6424A600614CB5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F681E6424A600614CB5 /* Section.swift */; };
-		3F2C9F6B1E64251700614CB5 /* RowConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6A1E64251700614CB5 /* RowConvertible.swift */; };
-		3F2C9F701E6428F900614CB5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6C1E6428F900614CB5 /* Button.swift */; };
-		3F2C9F711E6428F900614CB5 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6D1E6428F900614CB5 /* Detail.swift */; };
-		3F2C9F721E6428F900614CB5 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6E1E6428F900614CB5 /* Switch.swift */; };
-		3F2C9F731E6428F900614CB5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6F1E6428F900614CB5 /* TextField.swift */; };
 		3F2C9F7B1E6429B600614CB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F7A1E6429B600614CB5 /* AppDelegate.swift */; };
 		3F2C9F7D1E6429B600614CB5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F7C1E6429B600614CB5 /* ViewController.swift */; };
 		3F2C9F801E6429B600614CB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2C9F7E1E6429B600614CB5 /* Main.storyboard */; };
 		3F2C9F821E6429B600614CB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F2C9F811E6429B600614CB5 /* Assets.xcassets */; };
 		3F2C9F851E6429B600614CB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2C9F831E6429B600614CB5 /* LaunchScreen.storyboard */; };
+		3F2C9F8A1E64309E00614CB5 /* MinimalForms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2C9F401E63735000614CB5 /* MinimalForms.framework */; };
+		3F2C9F8B1E64309E00614CB5 /* MinimalForms.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2C9F401E63735000614CB5 /* MinimalForms.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3F2C9F8F1E6430CC00614CB5 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6C1E6428F900614CB5 /* Button.swift */; };
+		3F2C9F901E6430CC00614CB5 /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5E1E6422F400614CB5 /* ButtonCell.swift */; };
+		3F2C9F911E6430CC00614CB5 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6D1E6428F900614CB5 /* Detail.swift */; };
+		3F2C9F921E6430CC00614CB5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F5F1E6422F400614CB5 /* DetailCell.swift */; };
+		3F2C9F931E6430D900614CB5 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F661E6423E400614CB5 /* Row.swift */; };
+		3F2C9F941E6430D900614CB5 /* RowConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6A1E64251700614CB5 /* RowConvertible.swift */; };
+		3F2C9F951E6430D900614CB5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F681E6424A600614CB5 /* Section.swift */; };
+		3F2C9F961E6430D900614CB5 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6E1E6428F900614CB5 /* Switch.swift */; };
+		3F2C9F971E6430D900614CB5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F601E6422F400614CB5 /* SwitchCell.swift */; };
+		3F2C9F981E6430D900614CB5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6F1E6428F900614CB5 /* TextField.swift */; };
+		3F2C9F991E6430D900614CB5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -298,6 +300,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F2C9F8F1E6430CC00614CB5 /* Button.swift in Sources */,
+				3F2C9F961E6430D900614CB5 /* Switch.swift in Sources */,
+				3F2C9F991E6430D900614CB5 /* TextFieldCell.swift in Sources */,
+				3F2C9F971E6430D900614CB5 /* SwitchCell.swift in Sources */,
+				3F2C9F981E6430D900614CB5 /* TextField.swift in Sources */,
+				3F2C9F901E6430CC00614CB5 /* ButtonCell.swift in Sources */,
+				3F2C9F941E6430D900614CB5 /* RowConvertible.swift in Sources */,
+				3F2C9F951E6430D900614CB5 /* Section.swift in Sources */,
+				3F2C9F921E6430CC00614CB5 /* DetailCell.swift in Sources */,
+				3F2C9F931E6430D900614CB5 /* Row.swift in Sources */,
+				3F2C9F911E6430CC00614CB5 /* Detail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,17 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F2C9F5D1E6421F400614CB5 /* MinimalFormsTests.swift in Sources */,
-				3F2C9F641E6422F400614CB5 /* SwitchCell.swift in Sources */,
-				3F2C9F621E6422F400614CB5 /* ButtonCell.swift in Sources */,
-				3F2C9F731E6428F900614CB5 /* TextField.swift in Sources */,
-				3F2C9F721E6428F900614CB5 /* Switch.swift in Sources */,
-				3F2C9F691E6424A600614CB5 /* Section.swift in Sources */,
-				3F2C9F6B1E64251700614CB5 /* RowConvertible.swift in Sources */,
-				3F2C9F631E6422F400614CB5 /* DetailCell.swift in Sources */,
-				3F2C9F711E6428F900614CB5 /* Detail.swift in Sources */,
-				3F2C9F671E6423E400614CB5 /* Row.swift in Sources */,
-				3F2C9F701E6428F900614CB5 /* Button.swift in Sources */,
-				3F2C9F651E6422F400614CB5 /* TextFieldCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
