@@ -15,6 +15,7 @@
 		3F2C9F641E6422F400614CB5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F601E6422F400614CB5 /* SwitchCell.swift */; };
 		3F2C9F651E6422F400614CB5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */; };
 		3F2C9F671E6423E400614CB5 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F661E6423E400614CB5 /* Row.swift */; };
+		3F2C9F691E6424A600614CB5 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F681E6424A600614CB5 /* Section.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,7 @@
 		3F2C9F601E6422F400614CB5 /* SwitchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchCell.swift; path = Sources/MinimalForms/Cells/SwitchCell.swift; sourceTree = SOURCE_ROOT; };
 		3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TextFieldCell.swift; path = Sources/MinimalForms/Cells/TextFieldCell.swift; sourceTree = SOURCE_ROOT; };
 		3F2C9F661E6423E400614CB5 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Row.swift; path = Sources/MinimalForms/Cells/Row.swift; sourceTree = SOURCE_ROOT; };
+		3F2C9F681E6424A600614CB5 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Section.swift; path = Sources/MinimalForms/Cells/Section.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				3F2C9F581E63742300614CB5 /* Info.plist */,
 				3F2C9F5A1E63743100614CB5 /* MinimalForms.h */,
 				3F2C9F661E6423E400614CB5 /* Row.swift */,
+				3F2C9F681E6424A600614CB5 /* Section.swift */,
 				3F2C9F601E6422F400614CB5 /* SwitchCell.swift */,
 				3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */,
 			);
@@ -223,6 +226,7 @@
 				3F2C9F5D1E6421F400614CB5 /* MinimalFormsTests.swift in Sources */,
 				3F2C9F641E6422F400614CB5 /* SwitchCell.swift in Sources */,
 				3F2C9F621E6422F400614CB5 /* ButtonCell.swift in Sources */,
+				3F2C9F691E6424A600614CB5 /* Section.swift in Sources */,
 				3F2C9F631E6422F400614CB5 /* DetailCell.swift in Sources */,
 				3F2C9F671E6423E400614CB5 /* Row.swift in Sources */,
 				3F2C9F651E6422F400614CB5 /* TextFieldCell.swift in Sources */,
