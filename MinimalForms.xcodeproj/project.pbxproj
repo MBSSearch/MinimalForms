@@ -28,6 +28,7 @@
 		3F2C9F971E6430D900614CB5 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F601E6422F400614CB5 /* SwitchCell.swift */; };
 		3F2C9F981E6430D900614CB5 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F6F1E6428F900614CB5 /* TextField.swift */; };
 		3F2C9F991E6430D900614CB5 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F611E6422F400614CB5 /* TextFieldCell.swift */; };
+		3F2C9F9C1E6436FE00614CB5 /* FormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2C9F9A1E6436DC00614CB5 /* FormController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		3F2C9F811E6429B600614CB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F2C9F841E6429B600614CB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F2C9F861E6429B600614CB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F2C9F9A1E6436DC00614CB5 /* FormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormController.swift; path = Sources/MinimalForms/Cells/FormController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				3F2C9F5E1E6422F400614CB5 /* ButtonCell.swift */,
 				3F2C9F6D1E6428F900614CB5 /* Detail.swift */,
 				3F2C9F5F1E6422F400614CB5 /* DetailCell.swift */,
+				3F2C9F9A1E6436DC00614CB5 /* FormController.swift */,
 				3F2C9F581E63742300614CB5 /* Info.plist */,
 				3F2C9F5A1E63743100614CB5 /* MinimalForms.h */,
 				3F2C9F661E6423E400614CB5 /* Row.swift */,
@@ -303,6 +306,7 @@
 				3F2C9F8F1E6430CC00614CB5 /* Button.swift in Sources */,
 				3F2C9F961E6430D900614CB5 /* Switch.swift in Sources */,
 				3F2C9F991E6430D900614CB5 /* TextFieldCell.swift in Sources */,
+				3F2C9F9C1E6436FE00614CB5 /* FormController.swift in Sources */,
 				3F2C9F971E6430D900614CB5 /* SwitchCell.swift in Sources */,
 				3F2C9F981E6430D900614CB5 /* TextField.swift in Sources */,
 				3F2C9F901E6430CC00614CB5 /* ButtonCell.swift in Sources */,
