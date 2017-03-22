@@ -38,6 +38,11 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
     return cell
   }
 
+  public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+    // With this we prevent cells that don't have a `didSelect` property from being selectable.
+    return sections[indexPath.section].rows[indexPath.row].didSelect != nil
+  }
+
   public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: true)
 
