@@ -1,10 +1,14 @@
 import UIKit
 
 public class FormController: NSObject, UITableViewDataSource, UITableViewDelegate {
+
   let sections: [Section]
+
+  let keyboardController: FormKeyboardController
 
   public init(sections: [Section], tableView: UITableView) {
     self.sections = sections
+    self.keyboardController = FormKeyboardController(formTableView: tableView)
     super.init()
 
     configure(tableView)
@@ -33,6 +37,11 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
     let config = sections[indexPath.section].rows[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: config.identifier, for: indexPath)
     config.configure(cell)
+
+    if let textField = (cell as? TextFieldCell)?.textField {
+      textField.inputAccessoryView = keyboardController.toolbar
+    }
+
     return cell
   }
 
