@@ -38,8 +38,11 @@ class FormKeyboardController {
       firstResponder.resignFirstResponder()
     } else {
       textFields[index + 1].becomeFirstResponder()
+
+      scrollTableToFirstResponderCell()
     }
   }
+
   @objc private func previous() {
     guard let firstResponder = self.firstResponder() else { return }
 
@@ -49,12 +52,17 @@ class FormKeyboardController {
 
     if index > 0 {
       textFields[index - 1].becomeFirstResponder()
+
+      scrollTableToFirstResponderCell()
     }
   }
+
   @objc private func done() {
     guard let firstResponder = self.firstResponder() else { return }
     firstResponder.resignFirstResponder()
   }
+
+  // MARK: -
 
   private func orderedTextFields() -> [UITextField] {
     guard let tableView = self.tableView else { preconditionFailure("Called \(#function) before the table view had been set") }
@@ -75,6 +83,17 @@ class FormKeyboardController {
   private func firstResponder() -> UITextField? {
     guard let tableView = self.tableView else { preconditionFailure("Called \(#function) before the table view had been set") }
     return extractTextFields(from: tableView).first(where: { $0.isFirstResponder })
+  }
+
+  // MARK: -
+
+  private func scrollTableToFirstResponderCell() {
+    guard let firstResponder = self.firstResponder() else { return }
+
+    guard let tableView = tableView else { return }
+    let point = tableView.convert(firstResponder.center, from: firstResponder)
+    guard let indexPath = tableView.indexPathForRow(at: point) else { return }
+    tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
   }
 }
 
