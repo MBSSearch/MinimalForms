@@ -36,8 +36,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       Section(
         title: "",
         rows: [
-          TextField(placeholder: "bang", didChange: { textField in self.resource.text = textField.text }).toRow()
+          TextField(placeholder: "bang", didChange: { textField in self.resource.text = "\(self.resource.text ?? "")\(textField.text ?? "")" }).toRow(),
+          TextField(placeholder: "bong", didChange: { textField in self.resource.text = "\(self.resource.text ?? "")\(textField.text ?? "")" }).toRow(),
         ]
+      ),
+      Section(
+        title: "",
+        rows: [
+          Switch(text: "baz 2", didChange: { theSwitch in self.resource.isOn = theSwitch.isOn }).toRow(),
+          TextField(placeholder: "bong 2", didChange: { textField in self.resource.text = "\(self.resource.text ?? "")\(textField.text ?? "")" }).toRow(),
+          ]
       ),
       Section(
         title: "",
