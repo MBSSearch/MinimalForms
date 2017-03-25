@@ -15,9 +15,7 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
     tableView.delegate = self
 
     sections
-      .map { section in section.rows }
-      .joined()
-      .toArray()
+      .flatMap { $0.rows }
       .forEach { row in
         tableView.register(row.cellClass, forCellReuseIdentifier: row.identifier)
     }
@@ -49,12 +47,5 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
     let config = sections[indexPath.section].rows[indexPath.row]
 
     config.didSelect?()
-  }
-}
-
-extension FlattenBidirectionalCollection {
-
-  func toArray() -> Array<Base.Iterator.Element.Iterator.Element> {
-    return Array(self)
   }
 }
