@@ -2,7 +2,7 @@ import UIKit
 
 class FormKeyboardController {
 
-  private weak var tableView: UITableView?
+  fileprivate weak var tableView: UITableView?
 
   public lazy var toolbar: UIToolbar = {
     let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.tableView?.frame.size.width ?? 0, height: 50))
@@ -18,6 +18,12 @@ class FormKeyboardController {
 
   public init(formTableView: UITableView) {
     self.tableView = formTableView
+
+    subscribeToKeyboardDisplayNotifications()
+  }
+
+  deinit {
+    unsubscribeFromKeybaordDispalyNotifications()
   }
 
   @objc private func next() {
@@ -69,5 +75,61 @@ class FormKeyboardController {
   private func firstResponder() -> UITextField? {
     guard let tableView = self.tableView else { preconditionFailure("Called \(#function) before the table view had been set") }
     return extractTextFields(from: tableView).first(where: { $0.isFirstResponder })
+  }
+}
+
+// MARK: - Keyboard Display Handling
+//
+// This code is taken from https://gist.github.com/braking/5575962
+extension FormKeyboardController {
+
+  fileprivate func subscribeToKeyboardDisplayNotifications() {
+    let notificationCenter = NotificationCenter.default
+
+    notificationCenter.addObserver(
+      self,
+      selector: #selector(keyboardWillShow),
+      name: .UIKeyboardWillShow,
+      object: nil
+    )
+
+    notificationCenter.addObserver(
+      self,
+      selector: #selector(keyboardWillHide),
+      name: .UIKeyboardWillHide,
+      object: nil
+    )
+  }
+
+  fileprivate func unsubscribeFromKeybaordDispalyNotifications() {
+    NotificationCenter.default.removeObserver(self)
+  }
+
+  @objc private func keyboardWillShow(notification: NSNotification) {
+    guard let size = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? CGRect)?.size else { return }
+    guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+
+    // The original code uses the keyboard width or height as the bottom parameter depending on the
+    // orientation of the device. It's not clear to me why. I've tried on iOS 10 with only ever
+    // using the height and it seems to work well.
+    let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: size.height, right: 0)
+
+    UIView.animate(withDuration: duration) { [weak self] in
+      guard let tableView = self?.tableView else { return }
+
+      tableView.contentInset = contentInsets
+      tableView.scrollIndicatorInsets = contentInsets
+    }
+  }
+
+  @objc private func keyboardWillHide(notification: NSNotification) {
+    guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+
+    UIView.animate(withDuration: duration) { [weak self] in
+      guard let tableView = self?.tableView else { return }
+
+      tableView.contentInset = .zero
+      tableView.scrollIndicatorInsets = .zero
+    }
   }
 }
