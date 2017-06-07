@@ -3,7 +3,7 @@ import UIKit
 /// A cell with a `UISwitch` to the right.
 public class SwitchCell: UITableViewCell {
 
-  private let theSwitch = UISwitch()
+  internal let theSwitch = UISwitch()
 
   internal var didChange: ((UISwitch) -> ())? = .none
 

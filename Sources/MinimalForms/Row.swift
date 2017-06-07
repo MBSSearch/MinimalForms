@@ -14,6 +14,7 @@ public enum Row {
   case `switch`(
     text: String,
     detail: String?,
+    isOn: Bool,
     didChange: ((UISwitch) -> ()),
     afterConfigure: ((SwitchCell) -> ())?,
     didSelect: (() -> ())?
@@ -59,7 +60,7 @@ extension Row {
     switch self {
     case .button(_, _, let _didSelect, _): return _didSelect
     case .detail(_, _, _, _, let _didSelect): return _didSelect
-    case .switch(_, _, _, _, let _didSelect): return _didSelect
+    case .switch(_, _, _, _, _, let _didSelect): return _didSelect
     case .textField(_, _, _, _, let _didSelect): return _didSelect
     }
   }
@@ -74,10 +75,11 @@ extension Row {
       _cell.accessoryType = accessoryType
       afterConfigure?(_cell)
 
-    case .switch(let text, let detail, let didChange, let afterConfigure, _):
+    case .switch(let text, let detail, let isOn, let didChange, let afterConfigure, _):
       guard let _cell = cell as? SwitchCell else { return }
       _cell.textLabel?.text = text
       _cell.detailTextLabel?.text = detail
+      _cell.theSwitch.isOn = isOn
       _cell.didChange = didChange
       afterConfigure?(_cell)
 
