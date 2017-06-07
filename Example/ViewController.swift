@@ -27,9 +27,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     let t: [Section] = [
       Section(
-        title: "",
+        title: "Section with Title",
         rows: [
           Detail(text: "This is not really a form component", detail: "¯\\_(ツ)_/¯").toRow(),
+          Detail(text: "Type of something", detail: "type a", accessoryType: .disclosureIndicator).toRow(),
           Switch(text: "baz", didChange: { theSwitch in self.resource.isOn = theSwitch.isOn }).toRow(),
           ]
       ),
@@ -43,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       Section(
         title: "",
         rows: [
-          Switch(text: "baz 2", didChange: { theSwitch in self.resource.isOn = theSwitch.isOn }).toRow(),
+          Switch(text: "baz 2", detail: "zab", isOn: true, didChange: { theSwitch in self.resource.isOn = theSwitch.isOn }).toRow(),
           TextField(placeholder: "bong 2", didChange: { textField in self.resource.text = "\(self.resource.text ?? "")\(textField.text ?? "")" }).toRow(),
           ]
       ),
