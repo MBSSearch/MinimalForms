@@ -45,6 +45,12 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
     return cell
   }
 
+  public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    guard section <= sections.count - 1 else { return .none }
+    let config = sections[section]
+    return config.title
+  }
+
   public func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
     // With this we prevent cells that don't have a `didSelect` property from being selectable.
     return sections[indexPath.section].rows[indexPath.row].didSelect != nil
