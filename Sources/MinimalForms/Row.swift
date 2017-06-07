@@ -6,6 +6,7 @@ public enum Row {
   case detail(
     text: String,
     detail: String,
+    accessoryType: UITableViewCellAccessoryType,
     afterConfigure: ((DetailCell) -> ())?,
     didSelect: (() -> ())?
   )
@@ -57,7 +58,7 @@ extension Row {
   public var didSelect: (() -> ())? {
     switch self {
     case .button(_, _, let _didSelect, _): return _didSelect
-    case .detail(_, _, _, let _didSelect): return _didSelect
+    case .detail(_, _, _, _, let _didSelect): return _didSelect
     case .switch(_, _, _, _, let _didSelect): return _didSelect
     case .textField(_, _, _, _, let _didSelect): return _didSelect
     }
@@ -66,10 +67,11 @@ extension Row {
   public func configure(_ cell: UITableViewCell) {
     switch self {
 
-    case .detail(let text, let detail, let afterConfigure, _):
+    case .detail(let text, let detail, let accessoryType, let afterConfigure, _):
       guard let _cell = cell as? DetailCell else { return }
       _cell.textLabel?.text = text
       _cell.detailTextLabel?.text = detail
+      _cell.accessoryType = accessoryType
       afterConfigure?(_cell)
 
     case .switch(let text, let detail, let didChange, let afterConfigure, _):

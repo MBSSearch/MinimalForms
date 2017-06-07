@@ -1,17 +1,22 @@
+import UIKit
+
 public struct Detail {
   let text: String
   let detail: String
+  let accessoryType: UITableViewCellAccessoryType
   let afterConfigure: ((DetailCell) -> ())?
   let didSelect: (() -> ())?
 
   public init(
     text: String,
     detail: String,
+    accessoryType: UITableViewCellAccessoryType = .none,
     afterConfigure: ((DetailCell) -> ())? = .none,
     didSelect: (() -> ())? = .none
     ) {
     self.text = text
     self.detail = detail
+    self.accessoryType = accessoryType
     self.afterConfigure = afterConfigure
     self.didSelect = didSelect
   }
@@ -22,6 +27,7 @@ extension Detail: RowConvertible {
     return Row.detail(
       text: text,
       detail: detail,
+      accessoryType: accessoryType,
       afterConfigure: afterConfigure,
       didSelect: didSelect
     )
