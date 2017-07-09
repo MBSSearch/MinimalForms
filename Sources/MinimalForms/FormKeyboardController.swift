@@ -16,6 +16,22 @@ class FormKeyboardController {
     return toolbar
   }()
 
+  /// This value is used internally to store the content inset of the scroll view so that when the
+  /// keyboard is dismissed we can restore it.
+  ///
+  /// Having this allows the component to behave properly even if the scroll view insets have been
+  /// modified for any reason, such as when the view controller containing it is embedded in a
+  /// navigation controller.
+  internal var originalContentInset: UIEdgeInsets?
+
+  /// This value is used internally to store the content inset of the scroll view's scrolling
+  /// indicator so that when the keyboard is dismissed we can restore it.
+  ///
+  /// Having this allows the component to behave properly even if the scroll view insets have been
+  /// modified for any reason, such as when the view controller containing it is embedded in a
+  /// navigation controller.
+  internal var originalScrollIndicatorInset: UIEdgeInsets?
+
   public init(formTableView: UITableView) {
     self.tableView = formTableView
 
@@ -125,8 +141,30 @@ extension FormKeyboardController {
   }
 
   @objc private func keyboardWillShow(notification: NSNotification) {
+    guard let scrollView = tableView else { return }
+
     guard let size = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? CGRect)?.size else { return }
     guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+
+    // Apparently if you have the keyboard shown and "tab through fields" of a form the keyboard
+    // will show notification will be sent again.
+    //
+    // This means that we risk to track the original scroll view configuration for the scroll view
+    // already modified to behave properly with the keyboard on screen, which would result in the
+    // scroll view not resetting to its original state once the keyboard is dismissed.
+    //
+    // Rather than using a flag to track whether this is the "first" time that the keyboard is shown
+    // we can attempt to infer it by inspecting the inset of the scroll view. If it's equal to what
+    // we'd set for when the keyboard is on screen we can assume that the keyboard is already on
+    // screen.
+    //
+    // This doesn't take into account the case in which the bottom inset of the scroll view happens
+    // to be equal to what we'd set for the keyboard already, but that sounds like a very unlikely
+    // scenario.
+    let firstAppearnceOfKeyboard = scrollView.contentInset.bottom != size.height
+    if firstAppearnceOfKeyboard {
+      storeOriginalConfiguration(of: scrollView)
+    }
 
     // The original code uses the keyboard width or height as the bottom parameter depending on the
     // orientation of the device. It's not clear to me why. I've tried on iOS 10 with only ever
@@ -134,10 +172,10 @@ extension FormKeyboardController {
     let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: size.height, right: 0)
 
     UIView.animate(withDuration: duration) { [weak self] in
-      guard let tableView = self?.tableView else { return }
+      guard let scrollView = self?.tableView else { return }
 
-      tableView.contentInset = contentInsets
-      tableView.scrollIndicatorInsets = contentInsets
+      scrollView.contentInset = contentInsets
+      scrollView.scrollIndicatorInsets = contentInsets
     }
   }
 
@@ -145,10 +183,19 @@ extension FormKeyboardController {
     guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
 
     UIView.animate(withDuration: duration) { [weak self] in
-      guard let tableView = self?.tableView else { return }
+      guard let scrollView = self?.tableView else { return }
 
-      tableView.contentInset = .zero
-      tableView.scrollIndicatorInsets = .zero
+      self?.restoreOriginalConfiguration(of: scrollView)
     }
+  }
+
+  private func storeOriginalConfiguration(of scrollView: UIScrollView) {
+    originalContentInset = scrollView.contentInset
+    originalScrollIndicatorInset = scrollView.scrollIndicatorInsets
+  }
+
+  private func restoreOriginalConfiguration(of scrollView: UIScrollView) {
+    scrollView.contentInset = originalContentInset ?? .zero
+    scrollView.scrollIndicatorInsets = originalScrollIndicatorInset ?? .zero
   }
 }
