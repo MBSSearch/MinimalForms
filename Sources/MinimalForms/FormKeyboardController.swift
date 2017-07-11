@@ -169,7 +169,12 @@ extension FormKeyboardController {
     // The original code uses the keyboard width or height as the bottom parameter depending on the
     // orientation of the device. It's not clear to me why. I've tried on iOS 10 with only ever
     // using the height and it seems to work well.
-    let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: size.height, right: 0)
+    let contentInsets = UIEdgeInsets(
+      top: scrollView.contentInset.top,
+      left: scrollView.contentInset.left,
+      bottom: size.height,
+      right: scrollView.contentInset.right
+    )
 
     UIView.animate(withDuration: duration) { [weak self] in
       guard let scrollView = self?.tableView else { return }
