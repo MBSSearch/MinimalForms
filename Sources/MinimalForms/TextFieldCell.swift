@@ -11,7 +11,9 @@ public class TextFieldCell: UITableViewCell {
     super.init(style: .default, reuseIdentifier: reuseIdentifier)
     addTextField()
     textLabel?.text = " "
-    textField.addTarget(self, action: #selector(selfDidChange), for: .valueChanged)
+    // I was previously using .valueChanged and I could swear it worked, but that doesn't seem to
+    // be the case anymore.
+    textField.addTarget(self, action: #selector(selfDidChange), for: .editingDidEnd)
   }
 
   public required init?(coder aDecoder: NSCoder) {
