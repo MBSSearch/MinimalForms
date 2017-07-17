@@ -61,6 +61,8 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
 
     let config = sections[indexPath.section].rows[indexPath.row]
 
+    keyboardController.resignKeyboardResponder()
+
     config.didSelect?()
   }
 }

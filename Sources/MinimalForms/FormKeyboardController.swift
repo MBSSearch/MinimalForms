@@ -74,8 +74,13 @@ class FormKeyboardController {
   }
 
   @objc private func done() {
-    guard let firstResponder = self.firstResponder() else { return }
-    firstResponder.resignFirstResponder()
+    resignKeyboardResponder()
+  }
+
+  // MARK: -
+
+  func resignKeyboardResponder() {
+    firstResponder()?.resignFirstResponder()
   }
 
   // MARK: -
