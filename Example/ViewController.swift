@@ -37,6 +37,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       Section(
         title: "",
         rows: [
+          Button(
+            title: "Push form",
+            alignment: .center,
+            didSelect: { [unowned self] in
+              self.navigationController?.pushViewController(OtherViewController(), animated: true)
+            }
+          ).toRow()
+          ]
+        ),
+        Section(
+          title: "",
+          rows: [
+          Detail(text: "This is not really a form component", detail: "¯\\_(ツ)_/¯").toRow(),
+          Detail(text: "Type of something", detail: "type a", accessoryType: .disclosureIndicator).toRow(),
+          Switch(text: "baz", didChange: { theSwitch in self.resource.isOn = theSwitch.isOn }).toRow(),
+          ]
+      ),
+      Section(
+        title: "",
+        rows: [
           TextField(placeholder: "bang", didChange: { textField in self.resource.text = "\(self.resource.text ?? "")\(textField.text ?? "")" }).toRow(),
           TextField(placeholder: "bong", didChange: { textField in self.resource.text = "\(self.resource.text ?? "")\(textField.text ?? "")" }).toRow(),
         ]
@@ -60,6 +80,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       sections: t,
       tableView: tableView
     )
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    formController?.ownerViewDidAppear()
+  }
+
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    formController?.ownerViewWillDisappear()
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
