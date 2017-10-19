@@ -14,6 +14,26 @@ public class FormController: NSObject, UITableViewDataSource, UITableViewDelegat
     configure(tableView)
   }
 
+  /// Call this from the view controller in which the form is contained `viewDidAppear(_:)`
+  /// method in order to notify the `FormController` instance that is time to perform those
+  /// internal operations that depend on ththatis view lifecycle event.
+  ///
+  /// - Note: Currently this is used only to ensure the keyboard handling is registered. You can
+  ///         omit if your form doesn't have text inputs.
+  public func ownerViewDidAppear() {
+    keyboardController.subscribeToKeyboardDisplayNotifications()
+  }
+
+  /// Call this from the view controller in which the form is contained `viewWillDisappear(_:)`
+  /// method in order to notify the `FormController` instance that is time to perform those
+  /// internal operations that depend on that view lifecycle event.
+  ///
+  /// - Note: Currently this is used only to ensure the keyboard handling is deregistered. You can
+  ///         omit if your form doesn't have text inputs.
+  public func ownerViewWillDisappear() {
+    keyboardController.unsubscribeFromKeybaordDispalyNotifications()
+  }
+
   private func configure(_ tableView: UITableView) {
     tableView.dataSource = self
     tableView.delegate = self

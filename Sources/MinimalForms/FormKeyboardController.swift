@@ -4,6 +4,10 @@ class FormKeyboardController {
 
   fileprivate weak var tableView: UITableView?
 
+  /// Whether or not the instance has already subscribed to `NSNotificationCenter` for keyboard
+  /// handling. Used to avoid subscribing multiple times.
+  fileprivate var subscribed = false
+
   public lazy var toolbar: UIToolbar = {
     let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.tableView?.frame.size.width ?? 0, height: 50))
     toolbar.barStyle = .default
@@ -123,7 +127,9 @@ class FormKeyboardController {
 // This code is taken from https://gist.github.com/braking/5575962
 extension FormKeyboardController {
 
-  fileprivate func subscribeToKeyboardDisplayNotifications() {
+  func subscribeToKeyboardDisplayNotifications() {
+    guard subscribed == false else { return }
+
     let notificationCenter = NotificationCenter.default
 
     notificationCenter.addObserver(
@@ -139,10 +145,13 @@ extension FormKeyboardController {
       name: .UIKeyboardWillHide,
       object: nil
     )
+
+    subscribed = true
   }
 
-  fileprivate func unsubscribeFromKeybaordDispalyNotifications() {
+  func unsubscribeFromKeybaordDispalyNotifications() {
     NotificationCenter.default.removeObserver(self)
+    subscribed = false
   }
 
   @objc private func keyboardWillShow(notification: NSNotification) {
