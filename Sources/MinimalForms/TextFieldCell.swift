@@ -7,7 +7,7 @@ public class TextFieldCell: UITableViewCell {
 
   public var didChange: ((UITextField) -> ())? = .none
 
-  public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+  public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .default, reuseIdentifier: reuseIdentifier)
     addTextField()
     textLabel?.text = " "
@@ -24,7 +24,7 @@ public class TextFieldCell: UITableViewCell {
     textField.translatesAutoresizingMaskIntoConstraints = false
     contentView.addSubview(textField)
 
-    let attributes: [NSLayoutAttribute] = [
+    let attributes: [NSLayoutConstraint.Attribute] = [
       .topMargin,
       .trailingMargin,
       .bottomMargin
