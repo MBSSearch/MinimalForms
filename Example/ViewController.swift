@@ -6,7 +6,7 @@ struct Resource {
   var text: String? = .none
 
   func toString() -> String {
-    return "Resource\nisOn = \(isOn)\ntext = \(text)"
+    return "Resource\nisOn = \(isOn)\ntext = \(text ?? "`.none`")"
   }
 }
 

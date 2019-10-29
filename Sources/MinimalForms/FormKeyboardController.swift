@@ -12,10 +12,10 @@ class FormKeyboardController {
     let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.tableView?.frame.size.width ?? 0, height: 50))
     toolbar.barStyle = .default
     toolbar.items = [
-      UIBarButtonItem(title: "<", style: UIBarButtonItemStyle.plain, target: self, action: #selector(previous)),
-      UIBarButtonItem(title: ">", style: UIBarButtonItemStyle.plain, target: self, action: #selector(next)),
-      UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil),
-      UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(done))]
+      UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(previous)),
+      UIBarButtonItem(title: ">", style: .plain, target: self, action: #selector(next)),
+      UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil),
+      UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(done))]
     toolbar.sizeToFit()
     return toolbar
   }()
@@ -51,7 +51,7 @@ class FormKeyboardController {
 
     let textFields = orderedTextFields()
 
-    guard let index = textFields.index(of: firstResponder) else { return }
+    guard let index = textFields.firstIndex(of: firstResponder) else { return }
 
     if index == textFields.count - 1 {
       // this was the last text field
@@ -68,7 +68,7 @@ class FormKeyboardController {
 
     let textFields = orderedTextFields()
 
-    guard let index = textFields.index(of: firstResponder) else { return }
+    guard let index = textFields.firstIndex(of: firstResponder) else { return }
 
     if index > 0 {
       textFields[index - 1].becomeFirstResponder()
@@ -135,14 +135,14 @@ extension FormKeyboardController {
     notificationCenter.addObserver(
       self,
       selector: #selector(keyboardWillShow),
-      name: .UIKeyboardWillShow,
+      name: UIResponder.keyboardWillShowNotification,
       object: nil
     )
 
     notificationCenter.addObserver(
       self,
       selector: #selector(keyboardWillHide),
-      name: .UIKeyboardWillHide,
+      name: UIResponder.keyboardWillHideNotification,
       object: nil
     )
 
@@ -157,8 +157,8 @@ extension FormKeyboardController {
   @objc private func keyboardWillShow(notification: NSNotification) {
     guard let scrollView = tableView else { return }
 
-    guard let size = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? CGRect)?.size else { return }
-    guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+    guard let size = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect)?.size else { return }
+    guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
 
     // Apparently if you have the keyboard shown and "tab through fields" of a form the keyboard
     // will show notification will be sent again.
@@ -199,7 +199,7 @@ extension FormKeyboardController {
   }
 
   @objc private func keyboardWillHide(notification: NSNotification) {
-    guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+    guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
 
     UIView.animate(withDuration: duration) { [weak self] in
       guard let scrollView = self?.tableView else { return }

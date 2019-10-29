@@ -6,7 +6,7 @@ public enum Row {
   case detail(
     text: String,
     detail: String,
-    accessoryType: UITableViewCellAccessoryType,
+    accessoryType: UITableViewCell.AccessoryType,
     afterConfigure: ((DetailCell) -> ())?,
     didSelect: (() -> ())?
   )

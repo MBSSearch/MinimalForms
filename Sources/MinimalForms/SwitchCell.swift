@@ -7,7 +7,7 @@ public class SwitchCell: UITableViewCell {
 
   internal var didChange: ((UISwitch) -> ())? = .none
 
-  public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+  public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
     addSwitch()
     theSwitch.addTarget(self, action: #selector(switchDidChange(sender:)), for: .valueChanged)

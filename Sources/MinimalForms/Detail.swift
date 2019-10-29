@@ -3,14 +3,14 @@ import UIKit
 public struct Detail {
   let text: String
   let detail: String
-  let accessoryType: UITableViewCellAccessoryType
+  let accessoryType: UITableViewCell.AccessoryType
   let afterConfigure: ((DetailCell) -> ())?
   let didSelect: (() -> ())?
 
   public init(
     text: String,
     detail: String,
-    accessoryType: UITableViewCellAccessoryType = .none,
+    accessoryType: UITableViewCell.AccessoryType = .none,
     afterConfigure: ((DetailCell) -> ())? = .none,
     didSelect: (() -> ())? = .none
     ) {

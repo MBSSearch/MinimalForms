@@ -11,7 +11,7 @@ public class ButtonCell: UITableViewCell {
     }
   }
 
-  public override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+  public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: .default, reuseIdentifier: reuseIdentifier)
   }
 
